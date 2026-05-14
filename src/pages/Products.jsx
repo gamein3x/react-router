@@ -20,8 +20,18 @@ function Products() {
 
                 return response.json();
             }
-            )
-    })
+            ).then((data) => {
+                setLoading(false);
+                setProducts(data);
+            }
+            ).catch((error) => {
+                // Gestione degli errori
+                setError(error.message);
+            }
+            ).finally(() => {
+                setLoading(false);
+            });
+    });
 
     return (
         <div>Products</div>
