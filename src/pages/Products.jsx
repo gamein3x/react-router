@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 
 const API_URL = 'https://fakestoreapi.com/products';
 
@@ -45,7 +45,7 @@ function Products() {
         <ul>
             {products.map(product => {
                 return (
-                    <Link to="*" key={product.id}>
+                    <Link to={`/products/${product.id}`} key={product.id}>
                         <li>
                             <div className="product-img img-fluid ">
                                 <img src={product.image} alt={product.title} />
