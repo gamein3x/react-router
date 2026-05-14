@@ -46,12 +46,37 @@ function Products() {
         <ul>
             {products.map(product => {
                 return (
-                <Link to="" key={product.id}>
-                    <li>{product.title}</li>
-                </Link>)
+                    <Link to="*" key={product.id}>
+                        <li>
+                            <div className="product-img img-fluid ">
+                                <img src={product.image} alt={product.title} />
+                            </div>
+                            <div className="product-textbox">
+                                <h1>{product.title}</h1>
+                                <h5>{product.price}</h5>
+                                <p>{product.description}</p>
+                            </div>
+                            <div className="product-stats d-flex">
+                                <div>{product.category}</div>
+                                <div>
+                                    <p>{product.rating.rate}</p>
+                                    <p>{product.rating.count}</p>
+                                </div>
+                            </div>
+
+                        </li>
+                    </Link>)
             })}
         </ul>
     );
 }
 
 export default Products;
+
+{/* "id": 1, 
+    "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops", 
+    "price": 109.95, "description": "Your perfect pack for everyday use and walks 
+    in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday", 
+    "category": "men's clothing", 
+    "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png", 
+    "rating": { "rate": 3.9, "count": 120 } */ }
