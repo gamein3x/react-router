@@ -38,7 +38,6 @@ function Products() {
 
     // Creo nuovo componente Card e lo renderizzo qui
 
-
     if (loading) return <div>Caricamento in corso...</div>;
     if (error) return <div>Si è verificato un errore: {error}</div>;
 
