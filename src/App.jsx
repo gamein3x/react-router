@@ -14,7 +14,7 @@ function App() {
       <Route path="about" element={<About />} />
       {/* https://localhost:5172/products */}
       <Route path="products" element={<Products />} />
-      {/* https://localhost:5172/404 */}
+      {/* https://localhost:5172/LostPage */}
       <Route path="*" element={<LostPage />}/>
     </Routes>
   </BrowserRouter>

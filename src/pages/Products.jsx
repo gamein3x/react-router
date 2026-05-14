@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useEffect } from "react";
+import { Link } from "react-router";
 
 const API_URL = 'https://fakestoreapi.com/products';
 
@@ -33,13 +34,24 @@ function Products() {
                 setLoading(false);
                 console.log('Loading completo');
             });
-    }, []);
+    }, []); // Secondo argomento vuoto
+
+    // Creo nuovo componente Card e lo renderizzo qui
+
 
     if (loading) return <div>Caricamento in corso...</div>;
     if (error) return <div>Si è verificato un errore: {error}</div>;
 
     return (
-        <div><h1>Products</h1></div>
+        <ul>
+            {products.map(product => {
+                return (
+                <Link to="" key={product.id}>
+                    <li>{product.title}</li>
+                </Link>)
+            })}
+        </ul>
     );
 }
+
 export default Products;
