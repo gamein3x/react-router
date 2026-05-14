@@ -1,29 +1,30 @@
 import { NavLink } from "react-router";
+import styles from "../styles/Navbar.module.css"
 
 function Navbar() {
     return (
-        <div className="d-flex justify-content-center">
+        <div className={styles.navContainer}>
             <NavLink
                 to=""
-                className="nav-btn"
+                className={({ isActive }) => isActive ? styles.linkActive : styles.link}
             >
                 HOME
             </NavLink>
             <NavLink
                 to="about"
-                className="nav-btn"
+                className={({ isActive }) => isActive ? styles.linkActive : styles.link}
             >
                 ABOUT US
             </NavLink>
             <NavLink
                 to="products"
-                className="nav-btn"
+                className={({ isActive }) => isActive ? styles.linkActive : styles.link}
             >
                 OUR PRODUCTS
             </NavLink>
             <NavLink
                 to="*"
-                className="nav-btn"
+                className={({ isActive }) => isActive ? styles.linkActive : styles.link}
             >
                 LOSE YOURSELF
             </NavLink>
