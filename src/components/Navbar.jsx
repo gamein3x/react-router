@@ -1,6 +1,8 @@
+import { NavLink } from "react-router";
+
 function Navbar() {
-  return (
-    <div>Navbar</div>
-  )
+    return (
+        <NavLink />
+    )
 }
 export default Navbar
