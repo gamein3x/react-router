@@ -6,8 +6,8 @@ import {
 function App() {
   <BrowserRouter >
     <Routes>
-      {/* https://localhost:5172/prova*/}
-      <Route path="prova"/>
+      {/* https://localhost:5172/404 */}
+      <Route path="*" element={}/>
     </Routes>
   </BrowserRouter>
 }
