@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import {
   BrowserRouter, Routes, Route
-} from "react-router-dom"
-import LostPage from './pages/LostPage';
+} from "react-router-dom";
+import { About, Home, LostPage, Products } from './pages';
 
 function App() {
+  return (
   <BrowserRouter >
     <Routes>
       {/* https://localhost:5172/ */}
@@ -17,6 +18,7 @@ function App() {
       <Route path="*" element={<LostPage />}/>
     </Routes>
   </BrowserRouter>
+  );
 }
 
 export default App;

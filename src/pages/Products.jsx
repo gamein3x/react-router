@@ -17,12 +17,13 @@ function Products() {
                 if (!response.ok) {
                     throw new Error(`Errore HTTP! Stato: ${response.status}`);
                 }
-
+                console.log('Risposta');
                 return response.json();
             }
             ).then((data) => {
                 setLoading(false);
                 setProducts(data);
+                console.log('Data');
             }
             ).catch((error) => {
                 // Gestione degli errori
@@ -30,11 +31,15 @@ function Products() {
             }
             ).finally(() => {
                 setLoading(false);
+                console.log('Loading completo');
             });
-    });
+    }, []);
+
+    if (loading) return <div>Caricamento in corso...</div>;
+    if (error) return <div>Si è verificato un errore: {error}</div>;
 
     return (
-        <div>Products</div>
+        <div><h1>Products</h1></div>
     );
 }
-export default Products
+export default Products;
