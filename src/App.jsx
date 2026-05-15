@@ -2,8 +2,9 @@ import { useState } from 'react';
 import {
   BrowserRouter, Routes, Route
 } from "react-router-dom";
+
 import { About, Home, LostPage, Products } from './pages';
-import Layout from './components/Layout';
+import { Layout, ProductDetail} from './components';
 
 function App() {
   return (
@@ -16,9 +17,11 @@ function App() {
           <Route path="about" element={<About />} />
           {/* https://localhost:5172/products */}
           <Route path="products" element={<Products />} />
+          {/*  */}
+          <Route path="products/:id" element={<ProductDetail />} />
           {/* https://localhost:5172/LostPage */}
           <Route path="*" element={<LostPage />} />
-        </Route>
+        </ Route>
       </Routes>
     </BrowserRouter>
   );
